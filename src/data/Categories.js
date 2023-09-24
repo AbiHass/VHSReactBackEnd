@@ -1,10 +1,4 @@
 export const Categories = [
-/*     {
-      id: 1,
-      img: '',
-      title: 'Todos',
-      category: 'Todos',
-    }, */
     {
       id: 1,
       img: '',

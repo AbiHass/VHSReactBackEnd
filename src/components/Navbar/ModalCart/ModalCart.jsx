@@ -12,6 +12,8 @@ import CartCard from "./CartCard";
 import { clearCart, toggleHiddenCart } from "../../../redux/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 
+import { ModalOverlayStyled } from "../NavbarStyles";
+
 const ModalCart = () => {
   const {
     cartItems,
@@ -26,44 +28,54 @@ const ModalCart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
-    <AnimatePresence>
+    <>
       {!hiddenCart && (
-        <CartContainerStyled
-          initial={{ translateX: 600 }}
-          animate={{ translateX: 0 }}
-          exit={{ translateX: 600 }}
-          transition={{ type: "spring", damping: 27 }}
-          key="cart-modal"
-        >
-          <CartProductsContainer>
-            {cartItems.length ? (
-              cartItems.map((item) => <CartCard key={item.id} {...item} />)
-            ) : (
-              <p>No ha seleccionado ningún producto</p>
-            )}
-          </CartProductsContainer>
-          <PriceContainer>
-            <p>Subtotal: USD {totalPrice}</p>
-            <p>Envío: USD {shippingCost}</p>
-            <p>Total: USD {totalPrice + shippingCost}</p>
-          </PriceContainer>
-          <ButtonContainer>
-            <ButtonCart onClick={() => {
-            navigate("/checkout");
-          dispatch(toggleHiddenCart());
-        }}>
-              Comprar
-            </ButtonCart>
-            <ButtonCart
-              onClick={() => dispatch(clearCart())}
-              disable={!cartItems.length}
-            >
-              Vaciar Carrito
-            </ButtonCart>
-          </ButtonContainer>
-        </CartContainerStyled>
+        <ModalOverlayStyled
+          onClick={() => dispatch(toggleHiddenCart())}
+          isHidden={hiddenCart}
+        />
       )}
-    </AnimatePresence>
+      <AnimatePresence>
+        {!hiddenCart && (
+          <CartContainerStyled
+            initial={{ translateX: 600 }}
+            animate={{ translateX: 0 }}
+            exit={{ translateX: 600 }}
+            transition={{ type: "spring", damping: 27 }}
+            key="cart-modal"
+          >
+            <CartProductsContainer>
+              {cartItems.length ? (
+                cartItems.map((item) => <CartCard key={item.id} {...item} />)
+              ) : (
+                <p>No ha seleccionado ningún producto</p>
+              )}
+            </CartProductsContainer>
+            <PriceContainer>
+              <p>Subtotal: USD {totalPrice}</p>
+              <p>Envío: USD {shippingCost}</p>
+              <p>Total: USD {totalPrice + shippingCost}</p>
+            </PriceContainer>
+            <ButtonContainer>
+              <ButtonCart
+                onClick={() => {
+                  navigate("/checkout");
+                  dispatch(toggleHiddenCart());
+                }}
+              >
+                Comprar
+              </ButtonCart>
+              <ButtonCart
+                onClick={() => dispatch(clearCart())}
+                disable={!cartItems.length}
+              >
+                Vaciar Carrito
+              </ButtonCart>
+            </ButtonContainer>
+          </CartContainerStyled>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

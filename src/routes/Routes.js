@@ -6,6 +6,8 @@ import Register from "../pages/Register/Register";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import MyOrders from "../pages/MyOrders/MyOrders";
+import Verify from "../pages/Verify/Verify";
+import Confirmation from "../pages/Confirmation/Confirmation";
 
 function Routes() {
   return (
@@ -24,6 +26,8 @@ function Routes() {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/orders" element={<MyOrders />} />
+      <Route path="/verify" element={<Verify/>} />
+      <Route path="/Confirmation" element={<Confirmation/>} />
     </ReactDomRoutes>
   );
 }

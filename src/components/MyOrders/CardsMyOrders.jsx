@@ -2,7 +2,6 @@ import React from 'react'
 import { MisOrdenesContainer } from './CardMyOrdersStyles'
 import CardMyOrders from './CardMyOrders'
 import { useSelector } from 'react-redux'
-/* import { UserStyles } from '../User/UserStyles' */
 
 const CardsMyOrders = () => {
   const { orders } = useSelector(state => state.orders)

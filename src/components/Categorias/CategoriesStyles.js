@@ -32,10 +32,7 @@ export const CategoriaContainerStyled = styled(motion.div)`
     font-size: 9px;
     padding: 7px 10px;
   }
-/*   @media (max-width: 460px) {
-    font-size: 7px;
-    padding: 7px 10px;
-  } */
+
   @media (max-width: 460px) {
     font-size: 7px;
     padding: 7px 8px;

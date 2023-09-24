@@ -24,6 +24,7 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
       </Link>
       <LinksContainerStyled>
+        
         <CartNavStyled>
           <CartIcon />
         </CartNavStyled>

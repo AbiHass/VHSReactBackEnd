@@ -14,7 +14,7 @@ import { setCurrentUser } from "../../redux/user/userSlice";
 const Register = () => {
   const dispatch = useDispatch();
   const { state } = useLocation();
-  useRedirect(state?.redirectedFromCheckout ? "/checkout" : "/");
+  useRedirect(state?.redirectedFromCheckout ? "/checkout" : "/verify");
 
   return (
     <LoginContainerStyled>

@@ -1,5 +1,9 @@
 import React from "react";
-import { CartItemContainer, ItemHandler, ItemInfo } from "./ModalCartStyles";
+import {
+  CartItemContainer,
+  ItemHandler,
+  Price,
+} from "./ModalCartStyles";
 import { useDispatch } from "react-redux";
 import { addToCart, removeToCart } from "../../../redux/cart/cartSlice";
 
@@ -7,11 +11,14 @@ const CartCard = ({ img, name, id, price, quantity, director }) => {
   const dispatch = useDispatch();
   return (
     <CartItemContainer>
-      <img src={img} alt={name} />
-      <ItemInfo>
+      <span>
+        <img src={img} alt={name} />
         <h3>{name}</h3>
+      </span>
+
+      <Price>
         <p>${price}</p>
-      </ItemInfo>
+      </Price>
       <ItemHandler>
         <span
           onClick={() =>

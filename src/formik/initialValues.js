@@ -14,3 +14,8 @@ export const checkoutInitialValues = {
     email: '',
     password: ''
   }
+
+  export const verifyInitialValues = {
+    code: '',
+    email: ''
+  }

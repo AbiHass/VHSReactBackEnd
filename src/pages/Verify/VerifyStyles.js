@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { Form as FormikForm } from 'formik';
 
-export const ForgotContainerStyled = styled.div`
+export const VerifyContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-top: 40px;
+  padding: 110px 0 70px 0;
   background-color: var(--orange);
-  height: 418px;
-  font-family: var(--font);
-  font-size: 10px;
-  
+  h1{
+    font-family: var(--font);
+    font-size: 30px;
+  }
 `;
 
 export const Form = styled(FormikForm)`
@@ -20,5 +20,6 @@ export const Form = styled(FormikForm)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
 `;
+

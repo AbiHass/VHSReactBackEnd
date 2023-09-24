@@ -28,7 +28,7 @@ export const CartContainerStyled = styled(motion.div)`
   z-index: 99;
   gap: 30px;
   width: 450px;
-  height: 85%;
+  height: 86%;
   padding: 20px;
   background-color: var(--orange);
   border-radius: 60px 0 0 60px;
@@ -57,25 +57,25 @@ export const CartItemContainer = styled.div`
     img {
     height: 80px;
     width: 50px;
-    margin-right: 2px;
   }
   }
-
-`;
-export const ItemInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
   h3 {
     font-family: system-ui;
     font-size: 14px;
 
   }
-  p {
+  span {
+    display: flex;
+    align-items: center;
+    width: 55%;
+  }
+`;
+
+export const Price = styled.div`
     font-family: system-ui;
     font-size: 18px;
     font-weight: bold;
-  }
+ 
 `;
 
 export const ItemHandler = styled.div`
@@ -89,7 +89,6 @@ export const ItemHandler = styled.div`
   span {
     background-color: #e1960b;
     border-radius: 7px;
-    /* padding: 2px 5px; */
     height: 20px;
     width: 20px;
     display: flex;
@@ -105,28 +104,18 @@ export const ItemValor = styled.span`
   margin-right: 50px;
 `;
 export const QuantityHandlerDown = styled.span`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* padding: 4px; */
   border-radius: 5px;
   color: black;
   font-weight: 400;
   cursor: pointer;
   font-weight: bold;
-  /* font-size: 25px; */
 `;
 export const QuantityHandlerUp = styled.span`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
- /*  padding: 4px; */
   border-radius: 5px;
   color: black;
   font-weight: 400;
   cursor: pointer;
   font-weight: bold;
- /*  font-size: 18px; */
 `;
 export const ItemQuantity = styled.span`
   font-weight: bold;
@@ -161,5 +150,6 @@ export const ButtonCart = styled.button`
   @media (max-width: 425px){
     padding: 5px 25px;
     font-size: 12px;
+    margin-bottom: 20px;
   }
 `;
